@@ -1,0 +1,122 @@
+{"level":"error","msg":"Can't open database: dial tcp 172.22.0.4:3306: connect: connection refused","time":"2021-05-06T03:16:49Z"}
+{"level":"error","msg":"Can't open database: dial tcp 172.22.0.4:3306: connect: connection refused","time":"2021-05-06T03:17:03Z"}
+{"ServerThread":"Main","level":"info","msg":"Server is starting...","time":"2021-05-06T03:17:09Z"}
+{"ServerThread":"Main","level":"info","msg":"Websocket listening...","time":"2021-05-06T03:17:09Z"}
+{"ServerThread":"Main","level":"info","msg":"Master websocket listening...","time":"2021-05-06T03:17:09Z"}
+{"Method":"POST","Path":"/companies/list","level":"info","msg":"Incoming request","request_id":"c29lvku6p3i5nve7hjc0","time":"2021-05-06T03:17:39Z"}
+{"Method":"POST","Path":"/users/list","level":"info","msg":"Incoming request","request_id":"c29m0cu6p3i5nve7hjcg","time":"2021-05-06T03:19:15Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29m0fm6p3i5nve7hjd0","time":"2021-05-06T03:19:26Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29m0fm6p3i5nve7hjdg","time":"2021-05-06T03:19:26Z"}
+{"Method":"POST","Path":"/mnemoschemes/save","level":"info","msg":"Incoming request","request_id":"c29m0oe6p3i5nve7hje0","time":"2021-05-06T03:20:01Z"}
+{"level":"error","msg":"companyID: 0","request_id":"c29m0oe6p3i5nve7hje0","time":"2021-05-06T03:20:01Z"}
+{"level":"error","msg":"mnemoID: 0","request_id":"c29m0oe6p3i5nve7hje0","time":"2021-05-06T03:20:01Z"}
+{"level":"info","msg":"Reaquest Header: multipart/form-data; boundary=----WebKitFormBoundary1E33aC3vKBlKKbDM%!s(MISSING)","request_id":"c29m0oe6p3i5nve7hje0","time":"2021-05-06T03:20:01Z"}
+{"level":"info","msg":"Response Header: map[]%!s(MISSING)","request_id":"c29m0oe6p3i5nve7hje0","time":"2021-05-06T03:20:01Z"}
+{"level":"error","msg":"validate: companyId: cannot be blank.","request_id":"c29m0oe6p3i5nve7hje0","time":"2021-05-06T03:20:01Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29m0oe6p3i5nve7hjeg","time":"2021-05-06T03:20:01Z"}
+{"level":"error","msg":"Can't open database: dial tcp 172.23.0.4:3306: connect: connection refused","time":"2021-05-06T03:25:54Z"}
+{"level":"error","msg":"Can't open database: dial tcp 172.23.0.4:3306: connect: connection refused","time":"2021-05-06T03:26:13Z"}
+{"ServerThread":"Main","level":"info","msg":"Server is starting...","time":"2021-05-06T03:26:31Z"}
+{"ServerThread":"Main","level":"info","msg":"Websocket listening...","time":"2021-05-06T03:26:31Z"}
+{"ServerThread":"Main","level":"info","msg":"Master websocket listening...","time":"2021-05-06T03:26:31Z"}
+{"Method":"POST","Path":"/auth","level":"info","msg":"Incoming request","request_id":"c29mghm6p3ia50v3jm6g","time":"2021-05-06T03:53:42Z"}
+{"level":"info","msg":"Non auth route","request_id":"c29mghm6p3ia50v3jm6g","time":"2021-05-06T03:53:42Z"}
+{"Method":"POST","Path":"/users/list","level":"info","msg":"Incoming request","request_id":"c29mgju6p3ia50v3jm7g","time":"2021-05-06T03:53:51Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mgke6p3ia50v3jm80","time":"2021-05-06T03:53:53Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mgku6p3ia50v3jm8g","time":"2021-05-06T03:53:55Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mglm6p3ia50v3jm90","time":"2021-05-06T03:53:58Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mglu6p3ia50v3jm9g","time":"2021-05-06T03:53:59Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mgm66p3ia50v3jma0","time":"2021-05-06T03:54:00Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mgme6p3ia50v3jmag","time":"2021-05-06T03:54:01Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mgme6p3ia50v3jmb0","time":"2021-05-06T03:54:01Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mgq66p3ia50v3jmbg","time":"2021-05-06T03:54:16Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mgqe6p3ia50v3jmc0","time":"2021-05-06T03:54:17Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mgqm6p3ia50v3jmcg","time":"2021-05-06T03:54:18Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mgqu6p3ia50v3jmd0","time":"2021-05-06T03:54:19Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mgr66p3ia50v3jmdg","time":"2021-05-06T03:54:20Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mgre6p3ia50v3jme0","time":"2021-05-06T03:54:21Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mgv66p3ia50v3jmeg","time":"2021-05-06T03:54:36Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mgvm6p3ia50v3jmf0","time":"2021-05-06T03:54:38Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mh066p3ia50v3jmfg","time":"2021-05-06T03:54:40Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mh0e6p3ia50v3jmg0","time":"2021-05-06T03:54:41Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mh0m6p3ia50v3jmgg","time":"2021-05-06T03:54:42Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mh166p3ia50v3jmh0","time":"2021-05-06T03:54:44Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mh166p3ia50v3jmhg","time":"2021-05-06T03:54:44Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mh1e6p3ia50v3jmi0","time":"2021-05-06T03:54:45Z"}
+{"Method":"POST","Path":"/users/list","level":"info","msg":"Incoming request","request_id":"c29mh1u6p3ia50v3jmig","time":"2021-05-06T03:54:47Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mh1u6p3ia50v3jmj0","time":"2021-05-06T03:54:47Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mh266p3ia50v3jmjg","time":"2021-05-06T03:54:48Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mh2u6p3ia50v3jmk0","time":"2021-05-06T03:54:51Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mh366p3ia50v3jmkg","time":"2021-05-06T03:54:52Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mh3e6p3ia50v3jml0","time":"2021-05-06T03:54:53Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mh3m6p3ia50v3jmlg","time":"2021-05-06T03:54:54Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mh466p3ia50v3jmm0","time":"2021-05-06T03:54:56Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mh4e6p3ia50v3jmmg","time":"2021-05-06T03:54:57Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mh4u6p3ia50v3jmn0","time":"2021-05-06T03:54:59Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mh5e6p3ia50v3jmng","time":"2021-05-06T03:55:01Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mh5m6p3ia50v3jmo0","time":"2021-05-06T03:55:02Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mh8m6p3ia50v3jmog","time":"2021-05-06T03:55:14Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mhc66p3ia50v3jmp0","time":"2021-05-06T03:55:28Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mhcu6p3ia50v3jmpg","time":"2021-05-06T03:55:31Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mhde6p3ia50v3jmq0","time":"2021-05-06T03:55:33Z"}
+{"Method":"POST","Path":"/companies/list","level":"info","msg":"Incoming request","request_id":"c29mhdm6p3ia50v3jmqg","time":"2021-05-06T03:55:34Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mhem6p3ia50v3jmr0","time":"2021-05-06T03:55:38Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mheu6p3ia50v3jmrg","time":"2021-05-06T03:55:39Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mhfe6p3ia50v3jms0","time":"2021-05-06T03:55:41Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mhim6p3ia50v3jmsg","time":"2021-05-06T03:55:54Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mhk66p3ia50v3jmt0","time":"2021-05-06T03:56:00Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mhkm6p3ia50v3jmtg","time":"2021-05-06T03:56:02Z"}
+{"Method":"POST","Path":"/companies/list","level":"info","msg":"Incoming request","request_id":"c29mhl66p3ia50v3jmu0","time":"2021-05-06T03:56:04Z"}
+{"Method":"POST","Path":"/oil_fields/save","level":"info","msg":"Incoming request","request_id":"c29mi6e6p3ia50v3jmug","time":"2021-05-06T03:57:13Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mi6e6p3ia50v3jmv0","time":"2021-05-06T03:57:13Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mi7e6p3ia50v3jmvg","time":"2021-05-06T03:57:17Z"}
+{"Method":"POST","Path":"/companies/list","level":"info","msg":"Incoming request","request_id":"c29mi7m6p3ia50v3jn00","time":"2021-05-06T03:57:18Z"}
+{"Method":"POST","Path":"/oil_fields/save","level":"info","msg":"Incoming request","request_id":"c29mi966p3ia50v3jn0g","time":"2021-05-06T03:57:24Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mi966p3ia50v3jn10","time":"2021-05-06T03:57:24Z"}
+{"Method":"POST","Path":"/companies/list","level":"info","msg":"Incoming request","request_id":"c29mi9e6p3ia50v3jn1g","time":"2021-05-06T03:57:25Z"}
+{"Method":"POST","Path":"/oil_fields/save","level":"info","msg":"Incoming request","request_id":"c29mif66p3ia50v3jn20","time":"2021-05-06T03:57:48Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mif66p3ia50v3jn2g","time":"2021-05-06T03:57:48Z"}
+{"Method":"POST","Path":"/controllers/list","level":"info","msg":"Incoming request","request_id":"c29mifm6p3ia50v3jn30","time":"2021-05-06T03:57:50Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mihm6p3ia50v3jn3g","time":"2021-05-06T03:57:58Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mihm6p3ia50v3jn40","time":"2021-05-06T03:57:58Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29miie6p3ia50v3jn4g","time":"2021-05-06T03:58:01Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29miie6p3ia50v3jn50","time":"2021-05-06T03:58:01Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29miiu6p3ia50v3jn5g","time":"2021-05-06T03:58:03Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mijm6p3ia50v3jn60","time":"2021-05-06T03:58:06Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mike6p3ia50v3jn6g","time":"2021-05-06T03:58:09Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mikm6p3ia50v3jn70","time":"2021-05-06T03:58:10Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mil66p3ia50v3jn7g","time":"2021-05-06T03:58:12Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mile6p3ia50v3jn80","time":"2021-05-06T03:58:13Z"}
+{"Method":"POST","Path":"/users/list","level":"info","msg":"Incoming request","request_id":"c29milm6p3ia50v3jn8g","time":"2021-05-06T03:58:14Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mimu6p3ia50v3jn90","time":"2021-05-06T03:58:19Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29min66p3ia50v3jn9g","time":"2021-05-06T03:58:20Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29min66p3ia50v3jna0","time":"2021-05-06T03:58:20Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mine6p3ia50v3jnag","time":"2021-05-06T03:58:21Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29minu6p3ia50v3jnb0","time":"2021-05-06T03:58:23Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mlf66p3ia50v3jnbg","time":"2021-05-06T04:04:12Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mlf66p3ia50v3jnc0","time":"2021-05-06T04:04:12Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mlhe6p3ia50v3jncg","time":"2021-05-06T04:04:21Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mlhu6p3ia50v3jnd0","time":"2021-05-06T04:04:23Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mlhu6p3ia50v3jndg","time":"2021-05-06T04:04:23Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mli66p3ia50v3jne0","time":"2021-05-06T04:04:24Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mli66p3ia50v3jneg","time":"2021-05-06T04:04:24Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mlie6p3ia50v3jnf0","time":"2021-05-06T04:04:25Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mlim6p3ia50v3jnfg","time":"2021-05-06T04:04:26Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mlim6p3ia50v3jng0","time":"2021-05-06T04:04:26Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mliu6p3ia50v3jngg","time":"2021-05-06T04:04:27Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mlj66p3ia50v3jnh0","time":"2021-05-06T04:04:28Z"}
+{"Method":"POST","Path":"/users/list","level":"info","msg":"Incoming request","request_id":"c29mlj66p3ia50v3jnhg","time":"2021-05-06T04:04:28Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mljm6p3ia50v3jni0","time":"2021-05-06T04:04:30Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mljm6p3ia50v3jnig","time":"2021-05-06T04:04:30Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mlju6p3ia50v3jnj0","time":"2021-05-06T04:04:31Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mlk66p3ia50v3jnjg","time":"2021-05-06T04:04:32Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mlk66p3ia50v3jnk0","time":"2021-05-06T04:04:32Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mlke6p3ia50v3jnkg","time":"2021-05-06T04:04:33Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mlkm6p3ia50v3jnl0","time":"2021-05-06T04:04:34Z"}
+{"Method":"POST","Path":"/mnemoschemes/list","level":"info","msg":"Incoming request","request_id":"c29mll66p3ia50v3jnlg","time":"2021-05-06T04:04:36Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mlle6p3ia50v3jnm0","time":"2021-05-06T04:04:37Z"}
+{"Method":"POST","Path":"/oil_fields/list","level":"info","msg":"Incoming request","request_id":"c29mlle6p3ia50v3jnmg","time":"2021-05-06T04:04:37Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mllm6p3ia50v3jnn0","time":"2021-05-06T04:04:38Z"}
+{"Method":"POST","Path":"/alarms/list","level":"info","msg":"Incoming request","request_id":"c29mllm6p3ia50v3jnng","time":"2021-05-06T04:04:38Z"}
+{"Method":"POST","Path":"/users/list","level":"info","msg":"Incoming request","request_id":"c29mlm66p3ia50v3jno0","time":"2021-05-06T04:04:40Z"}
+{"Method":"POST","Path":"/sensors/list","level":"info","msg":"Incoming request","request_id":"c29mlme6p3ia50v3jnog","time":"2021-05-06T04:04:41Z"}

@@ -1,0 +1,1330 @@
+swagger: "2.0"
+info:
+  title: "Cloud Server API"
+  description: "This is a Cloud Server description"
+  version: "1.0.0"
+host: "cloud-server.citicom.kz"
+basePath: "/api"
+tags:
+  - name: Auth
+    description: "API Authorization"
+  - name: User
+    description: "API User"
+  - name: Company
+    description: "API Companies"
+  - name: Oil fields
+    description: "API Oil fields"
+  - name: Mnemo
+    description: "API mnemoschemes"
+  - name: Alarms
+    description: "API alarms"
+  - name: Desktop
+    description: "API desktop"
+schemes:
+  - "http"
+  - "https"
+  - "ws"
+
+paths:
+
+  /auth:
+    post:
+      tags:
+        - Auth
+      summary: "API Auth"
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/User'
+
+  /desktop:
+    get:
+      tags:
+        - Desktop
+      summary: "GET desktop for current user"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                type: object
+                properties:
+                  value:
+                    type: string
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+
+  /desktop/save:
+    post:
+      tags:
+        - Desktop
+      summary: "Save desktop for current user"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: ""
+          schema:
+            type: object
+            properties:
+              value:
+                type: string
+
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                type: object
+                properties:
+                  value:
+                    type: string
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+
+  /users/list:
+    get:
+      tags:
+        - User
+      summary: "GET users"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/UserList'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /users/create:
+    post:
+      tags:
+        - User
+      summary: "Create user"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/CreateUser'
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/UserResult'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /users/update:
+    post:
+      tags:
+        - User
+      summary: "Update user"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/UpdateUser'
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/UserResult'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /users/usersChangePassword:
+    post:
+      tags:
+        - User
+      summary: "Save user password"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              userId:
+                type: integer
+                format: int64
+              password:
+                type: integer
+                format: int64
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/UserResult'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /users/delete:
+    post:
+      tags:
+        - User
+      summary: "Delete user"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            properties:
+              userId:
+                type: integer
+                format: int64
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/UserResult'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+
+  /companies/list:
+    get:
+      tags:
+        - Company
+      summary: "GET companies"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/CompanyList'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /companies/save:
+    post:
+      tags:
+        - Company
+      summary: "Save company"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Company'
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/CompanyResult'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /companies/delete:
+    post:
+      tags:
+        - Company
+      summary: "Save company"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              companyId:
+                type: integer
+                format: int64
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/CompanyResult'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+
+  /oil_fields/list:
+    get:
+      tags:
+        - Oil fields
+      summary: "Get oil fields"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/OilFieldList'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /oil_fields/save:
+    post:
+      tags:
+        - Oil fields
+      summary: "Save oil field"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/OilField'
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/OilFieldResult'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /oil_fields/delete:
+    post:
+      tags:
+        - Oil fields
+      summary: "Delete oil field"
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            properties:
+              oilFieldId:
+                type: integer
+                format: int64
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/OilFieldResult'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+
+  /controllers/list?oilFieldId={oilFieldId}:
+    get:
+      tags:
+        - Oil fields
+      summary: ""
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: "oilFieldId"
+          in: path
+          description: "oilFieldId identifier"
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/Controllers'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+
+  /controllers/data:
+    post:
+      tags:
+        - Oil fields
+      summary: ""
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            properties:
+              controllerId:
+                type: string
+              selectTime:
+                type: string
+                description: "OPTIONAL param"
+              diffTime:
+                type: string
+              groupTime:
+                type: string
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/SensorData'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+
+  /mnemoschemes/list?companyId={companyId}:
+    get:
+      tags:
+        - Mnemo
+      summary: ""
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: "companyId"
+          in: path
+          description: "companyId identifier"
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/MnemoList'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /mnemoschemes/save:
+    post:
+      tags:
+        - Mnemo
+      summary: ""
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: "mnemoId"
+          in: formData
+          description: "mnemoId optional param"
+          required: false
+          type: integer
+        - name: "companyId"
+          in: formData
+          description: "companyId identifier"
+          required: true
+          type: integer
+        - name: "name"
+          in: formData
+          description: "name of mnemo"
+          required: true
+          type: integer
+        - name: "file"
+          in: formData
+          description: "file required for create | optional for update"
+          required: false
+          type: file
+      responses:
+
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/MnemoResult'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /mnemoschemes/data:
+    post:
+      tags:
+        - Oil fields
+      summary: ""
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            properties:
+              sensorIds:
+                type: array
+                items:
+                  type: string
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/MnemoDataResultList'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+
+  /alarms/list:
+    get:
+      tags:
+        - Alarms
+      summary: ""
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/AlarmList'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+  /alarms/markAsViewed:
+    post:
+      tags:
+        - Alarms
+      summary: ""
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            properties:
+              alarmId:
+                type: integer
+                format: int64
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+              data:
+                $ref: '#/definitions/AlarmResult'
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+
+  /files?path={path}:
+    get:
+      tags:
+        - Files
+      summary: ""
+      parameters:
+        - name: AuthToken
+          in: header
+          description: "Application user session token"
+          required: true
+          type: string
+        - name: "path"
+          in: path
+          description: "path without first / | for example: http://localhost:9998/files?path=uploads/2/kamiskol1.svg "
+          required: true
+          type: string
+      responses:
+        200:
+          description: "File response"
+        401:
+          description: "Invalid token"
+        403:
+          description: "Not enough rights"
+        404:
+          description: "Page not found"
+        500:
+          description: "Internal server error"
+          schema:
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+
+definitions:
+  CreateUser:
+    type: object
+    properties:
+      companyId:
+        type: integer
+        format: int64
+      email:
+        type: string
+        format: email
+      firstName:
+        type: string
+      lastName:
+        type: string
+      role:
+        type: string
+        enum:
+          - super
+          - admin
+          - manager
+          - operator
+      password:
+        type: string
+  UpdateUser:
+    type: object
+    properties:
+      userId:
+        type: integer
+        format: int64
+      companyId:
+        type: integer
+        format: int64
+      email:
+        type: string
+        format: email
+      firstName:
+        type: string
+      lastName:
+        type: string
+      role:
+        type: string
+        enum:
+          - super
+          - admin
+          - manager
+          - operator
+      isDeleted:
+        type: boolean
+
+  User:
+    type: object
+    properties:
+      userId:
+        type: integer
+        format: int64
+      email:
+        type: string
+        format: email
+      token:
+        type: string
+      role:
+        type: string
+        enum:
+          - super
+          - admin
+          - manager
+          - operator
+      createTs:
+        type: integer
+        format: int64
+
+  UserList:
+    type: array
+    items:
+      $ref: '#/definitions/UserResult'
+
+  UserResult:
+    type: object
+    properties:
+      userId:
+        type: integer
+        format: int64
+      companyId:
+        type: integer
+        format: int64
+      email:
+        type: string
+        format: email
+      firstName:
+        type: string
+      lastName:
+        type: string
+      role:
+        type: object
+        properties:
+          name:
+            type: string
+          permissions:
+            type: array
+            items:
+              type: string
+      isDeleted:
+        type: boolean
+      isOnline:
+        type: boolean
+      createdTs:
+        type: integer
+        format: int64
+      updatedTs:
+        type: integer
+        format: int64
+
+  CompanyList:
+    type: array
+    items:
+      $ref: '#/definitions/CompanyResult'
+
+  Company:
+    type: object
+    properties:
+      companyId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      bin:
+        type: string
+      iin:
+        type: string
+      iic:
+        type: string
+      bic:
+        type: string
+      address:
+        type: string
+      phoneNumbers:
+        type: string
+        description: "Phone numbers format: +77771233212"
+
+  CompanyResult:
+    type: object
+    properties:
+      companyId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      bin:
+        type: string
+      iin:
+        type: string
+      iic:
+        type: string
+      bic:
+        type: string
+      address:
+        type: string
+      phoneNumbers:
+        type: string
+        description: "Phone numbers format: +77771233212"
+      isDeleted:
+        type: boolean
+      createdTs:
+        type: integer
+        format: int64
+      updated_ts:
+        type: integer
+        format: int64
+
+  OilField:
+    type: object
+    properties:
+      oilFieldId:
+        type: integer
+        format: int64
+      httpAddress:
+        type: string
+      companyId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      lat:
+        type: number
+        format: float
+      lon:
+        type: number
+        format: float
+      isDeleted:
+        type: boolean
+
+  OilFieldList:
+    type: array
+    items:
+      $ref: '#/definitions/OilFieldResult'
+
+  OilFieldResult:
+    type: object
+    properties:
+      oilFieldId:
+        type: integer
+        format: int64
+      httpAddress:
+        type: string
+      companyId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      lat:
+        type: number
+        format: float
+      lon:
+        type: number
+        format: float
+      isDeleted:
+        type: boolean
+      createdTs:
+        type: integer
+        format: int64
+      updatedTs:
+        type: integer
+        format: int64
+      isOnline:
+        type: boolean
+
+  Controllers:
+    type: array
+    items:
+      $ref: '#/definitions/ControllerResult'
+
+  ControllerResult:
+    type: object
+    properties:
+      controllerId:
+        type: string
+      name:
+        type: string
+      oilFieldId:
+        type: integer
+        format: int64
+      model:
+        type: string
+      isEnabled:
+        type: boolean
+      createdTs:
+        type: integer
+        format: int64
+      updatedTs:
+        type: integer
+        format: int64
+      sensors:
+        type: array
+        items:
+          $ref: '#/definitions/SensorResult'
+
+  SensorResult:
+    type: object
+    properties:
+      sensorId:
+        type: string
+      tagName:
+        type: string
+      controllerId:
+        type: string
+      transform:
+        type: string
+      rangeL:
+        type: integer
+      rangeH:
+        type: integer
+      alarmL:
+        type: integer
+      alarmLL:
+        type: integer
+      alarmH:
+        type: integer
+      alarmHH:
+        type: integer
+      unit:
+        type: string
+      isEnabled:
+        type: boolean
+      createdTs:
+        type: integer
+        format: int64
+      updatedTs:
+        type: integer
+        format: int64
+
+  SensorData:
+    type: object
+    properties:
+      columns:
+        type: array
+        items:
+          type: array
+          items:
+            type: string
+            description: "first item string other float64 or integer64"
+      objects:
+        type: array
+        items:
+          $ref: '#/definitions/SensorResult'
+
+  MnemoList:
+    type: array
+    items:
+      $ref: '#/definitions/MnemoResult'
+
+  MnemoResult:
+    type: object
+    properties:
+      mnemoId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      companyId:
+        type: integer
+      fileUrl:
+        type: string
+
+  MnemoDataResultList:
+    type: array
+    items:
+      $ref: '#/definitions/MnemoDataResult'
+
+  MnemoDataResult:
+    type: object
+    properties:
+      sensorId:
+        type: string
+      unit:
+        type: string
+      formattedValue:
+        type: number
+        format: float
+      createdTs:
+        type: integer
+        format: int64
+
+  AlarmList:
+    type: array
+    items:
+      $ref: '#/definitions/AlarmResult'
+
+  AlarmResult:
+    type: object
+    properties:
+      alarmId:
+        type: integer
+        format: int64
+      userId:
+        type: integer
+        format: int64
+      oilFieldId:
+        type: integer
+        format: int64
+      controllerId:
+        type: string
+      sensorId:
+        type: string
+      alarmType:
+        type: string
+      alarmValue:
+        type: number
+        format: float
+      value:
+        type: number
+        format: float
+      time:
+        type: integer
+        format: int64
+      isViewed:
+        type: boolean
