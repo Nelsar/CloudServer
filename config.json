@@ -1,10 +1,10 @@
 { 
     "Host": "",
-    "Port": "9999",
+    "Port": "",
     "DatabaseHost": "tcp(db:3306)",
-    "DatabaseName": "cloud_server",
-    "DatabaseUser": "root",
-    "DatabasePass": "To!change!@",
+    "DatabaseName": "",
+    "DatabaseUser": "",
+    "DatabasePass": "",
     "InfluxDatabaseHost": "http://influx:8086",
     "InfluxDatabaseName": "cloudDB"
 
